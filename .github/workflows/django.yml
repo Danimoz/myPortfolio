@@ -41,6 +41,15 @@ jobs:
       run: |
         flake8
     - name: Coverage report
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        EMAIL_USER: ${{ secrets.EMAIL_USER }}
+        CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+        CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+        CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+        EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+        RECIPIENT_ADDRESS: ${{ secrets.SRECIPIENT_ADDRESS }}
       run: |
         coverage run manage.py test
         coverage report
