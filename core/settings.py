@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from dotenv import load_dotenv
 from pathlib import Path
-import cloudinary
+# import cloudinary
 
 load_dotenv()
 
@@ -118,8 +118,8 @@ LOGGING = {
         }
     },
     'filters': {
-        'require_debug_false' : {
-            '()' : 'django.utils.log.RequireDebugFalse'
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
         }
     },
     'handlers': {
@@ -140,8 +140,8 @@ LOGGING = {
             'handlers': ['console'],
             'propagate': True,
         },
-        'django.request' : {
-            'handlers' : ['mail_admins'],
+        'django.request': {
+            'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
         }
@@ -177,14 +177,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_URL =  'portfolio/'
+MEDIA_URL = 'portfolio/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#Cloudinary Config
+# Cloudinary Config
 CLOUDINARY = {
     'cloud_name': os.getenv('CLOUDINARY_CLOUD_NAME'),
     'api_key': os.getenv('CLOUDINARY_API_KEY'),
